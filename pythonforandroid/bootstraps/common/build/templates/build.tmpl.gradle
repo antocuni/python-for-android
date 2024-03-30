@@ -35,10 +35,10 @@ android {
         versionCode {{ args.numeric_version }}
         versionName '{{ args.version }}'
         manifestPlaceholders = {{ args.manifest_placeholders}}
-		multiDexEnabled true
+		//multiDexEnabled true
     }
 
-	
+
 	packagingOptions {
         jniLibs {
             useLegacyPackaging = true
@@ -50,7 +50,7 @@ android {
         exclude 'lib/**/gdb.setup'
         {%- endif %}
 	}
-	
+
 
 	{% if args.sign -%}
 	signingConfigs {
@@ -124,7 +124,6 @@ dependencies {
     {% if args.presplash_lottie %}
     implementation 'com.airbnb.android:lottie:6.1.0'
     {%- endif %}
-    compile 'com.android.support:support-v4:26.1.0'
-    compile 'com.android.support:multidex:1.0.3'
+    //compile 'com.android.support:support-v4:26.1.0'
+    //compile 'com.android.support:multidex:1.0.3'
 }
-
