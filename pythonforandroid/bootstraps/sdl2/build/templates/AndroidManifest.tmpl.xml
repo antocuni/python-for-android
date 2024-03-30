@@ -76,7 +76,7 @@
                   >
 
             <intent-filter>
-            {% if args.launcher %}            
+            {% if args.launcher %}
                 <action android:name="org.kivy.LAUNCH" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <data android:scheme="{{ url_scheme }}" />
@@ -138,10 +138,10 @@
     {% for a in args.add_activity  %}
     <activity android:name="{{ a }}"></activity>
     {% endfor %}
-    
+
     {% if args.fileprovider_paths %}
     <provider
-        android:name="android.support.v4.content.FileProvider"
+	    android:name="androidx.core.content.FileProvider"
         android:authorities="{{ args.package }}.fileprovider"
         android:exported="false"
         android:grantUriPermissions="true">
